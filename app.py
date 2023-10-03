@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, send_from_directory
 import os
 import uuid  # Import the UUID library to generate unique IDs
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 UPLOAD_FOLDER = 'videos'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
