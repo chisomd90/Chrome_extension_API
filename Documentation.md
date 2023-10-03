@@ -23,7 +23,7 @@ This API documentation provides information on how to use the Chrome Extension p
 
 ### Retrieve Video <a name="retrieve-video"></a>
 
-- **Endpoint:** `/videos/<path:filename>`
+- **Endpoint:** `/play/<path:filename>`
 - **HTTP Method:** `GET`
 - **Description:** Retrieves and serves a video file for playback.
 
