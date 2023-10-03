@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, send_from_directory
 import os
+import uuid  # Import the UUID library to generate unique IDs
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'videos'
@@ -19,13 +20,20 @@ def upload_file():
         return "No selected video file"
     
     if video:
-        filename = os.path.join(app.config['UPLOAD_FOLDER'], video.filename)
+        # Generate a unique ID for the video
+        unique_id = str(uuid.uuid4())
+
+        # Define the filename using the unique ID
+        filename = os.path.join(app.config['UPLOAD_FOLDER'], f'{unique_id}.mp4')
+
+        # Save the uploaded video using the unique filename
         video.save(filename)
         return "Video uploaded successfully"
 
-@app.route('/play/<video_filename>')
-def play_video(video_filename):
-    return render_template('play.html', video_filename=video_filename)
+@app.route('/play/<video_id>')
+def play_video(video_id):
+    # In the URL, 'video_id' should be the unique ID generated during upload
+    return render_template('play.html', video_filename=f'{video_id}.mp4')
 
 @app.route('/videos/<path:filename>')
 def serve_video(filename):

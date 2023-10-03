@@ -12,8 +12,6 @@ This project consists of a Chrome Extension for screen recording and a Flask-bas
 6. [Backend (Flask)](#backend-flask)
 7. [Testing](#testing)
 8. [Deployment](#deployment)
-9. [Contributing](#contributing)
-10. [License](#license)
 
 ## 1. Introduction <a name="introduction"></a>
 

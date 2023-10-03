@@ -8,9 +8,6 @@
 3. [Request and Response Formats](#request-and-response-formats)
 4. [Error Handling](#error-handling)
 5. [Testing](#testing)
-6. [Security Considerations](#security-considerations)
-7. [Rate Limiting (if applicable)](#rate-limiting)
-8. [Versioning (if applicable)](#versioning)
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -26,7 +23,7 @@ This API documentation provides information on how to use the Chrome Extension p
 
 ### Retrieve Video <a name="retrieve-video"></a>
 
-- **Endpoint:** `/videos/<video_filename>`
+- **Endpoint:** `/videos/<path:filename>`
 - **HTTP Method:** `GET`
 - **Description:** Retrieves and serves a video file for playback.
 
@@ -64,15 +61,3 @@ This API documentation provides information on how to use the Chrome Extension p
 - Use tools like Postman to test the API endpoints.
 - Verify that you can successfully upload and retrieve videos.
 
-## 6. Security Considerations <a name="security-considerations"></a>
-
-- Ensure that file uploads are properly validated and sanitized to prevent malicious uploads.
-- Implement rate limiting to prevent abuse or excessive uploads.
-
-## 7. Rate Limiting (if applicable) <a name="rate-limiting"></a>
-
-This API does not implement rate limiting but should be considered for production deployments.
-
-## 8. Versioning (if applicable) <a name="versioning"></a>
-
-This API does not have versioning, as it is a simple, single-version API.
